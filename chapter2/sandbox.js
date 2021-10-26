@@ -35,6 +35,9 @@
 // console.log(result0);
 // console.log(result1, '\n', result2, '\n', result3, '\n', result4);
 
+
+// // ======================================================shorthand operators======================================================
+
 // let radios = 10;
 // const pi = 3.14;
 // console.log(radios,pi);
@@ -45,6 +48,7 @@
 
 // let result=(pi*radios**2);
 // console.log(result);
+
 
 
 // let likes = 10;
@@ -65,7 +69,7 @@
 // let result = 'the blog has '+likes+' likes';
 // console.log(result);
 
-
+// // ======================================================types of string output======================================================
 // // // *****template string
 // const title = 'best reads of 2021';
 // const author = 'mario';
@@ -88,4 +92,61 @@
 //     <span>This blog has ${likes} likes</span>
 // `;
 // console.log(html);
+
+// // ======================================================arrays======================================================
+
+// // bellow is one way to define an array in js
+// let ninjas = ['Ali', 'Rali', 'Ryu'];
+// console.log(ninjas); // prints ['Ali','Rali','Ryu']
+// console.log(ninjas[2]); // prints Ryu
+
+// // you can assign a value by
+// ninjas[2] = 'Bella';
+// console.log(ninjas[2]); // prints Bellas
+
+// //lets create an age array
+// let ages = [20, 25, 30, 35];
+// console.log(ages[2]); // prints 30
+
+// // you can even do this
+// let random = ['Ali', 25, 'Crystal', 35];
+// console.log(random); // prints ['Ali', 25, 'Crystal', 35]
+
+// //you can get the lengh of an array with .length property
+// console.log(random.length);
+
+// // Array methods:
+// let resultB = ninjas.join(',');
+// console.log(resultB);
+
+// // to search for an index of an array you can use .indexOf method
+// let resultC = ninjas.indexOf('Ali');
+// console.log(resultC);
+
+// // You can also concatinate values to an array with .concat method
+// let resultD = ninjas.concat('Soltan', 'Emilia');
+// console.log(resultD);
+
+// // to add a new value to an array, you can use the method .push
+// let resultE = ninjas.push('Sergio');
+// console.log(resultE);
+// console.log(ninjas);
+
+// // and you can remove a value from an array by .pop method
+// resultE = ninjas.pop('Sergio');
+// console.log(resultE);
+// console.log(ninjas);
+
+// // ======================================================null and undefined======================================================
+
+// let ageA;
+// console.log(ageA, ageA +3 , `the age is ${ageA}`);
+
+// let ageB = null;
+// console.log(ageB, ageB +3 , `the age is ${ageB}`);
+
+
+// // ======================================================boolean======================================================
+
+// // booleans and 
 
