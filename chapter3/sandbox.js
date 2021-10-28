@@ -197,18 +197,140 @@
 
 
 // // ======================================================Control Flow======================================================
-// for loop
-for (let i = 0; i < 5; i++) {
-    console.log('in loop:', i);
-}
 
 const namesD = ['Ali', 'Rali', 'Shaun'];
-for (let i = 0; i < namesD.length; i++) {
-    console.log(namesD[i]);
+{
+    // for loop
+    console.log('-------------------for loop-------------------');
+
+    for (let i = 0; i < 5; i++) {
+        console.log('in loop:', i);
+    }
+
+
+    for (let i = 0; i < namesD.length; i++) {
+        console.log(namesD[i]);
+    }
+
+    for (let i = 0; i < namesD.length; i++) {
+        let html = `<div>${namesD[i]}</div>`;
+        console.log(html);
+    }
 }
 
-for (let i = 0; i < namesD.length; i++) {
-    let html=`<div>${namesD[i]}</div>`;
-    console.log(html);
+{
+    // while loop
+    console.log('-------------------while loop-------------------');
+    let i = 0;
+    while (i < namesD.length) {
+        console.log(namesD[i]);
+        i++;
+    }
 }
 
+{
+    //Do while loop
+    console.log('-------------------Do while loop-------------------');
+    let i = 6;
+    do {
+        console.log('This is a proof that this loop runs at least once')
+        console.log(i);
+        i++;
+    } while (i < 5);
+}
+
+{
+    // if statements
+    console.log('-------------------if statements-------------------');
+
+    const age = 20;
+    if (age >= 20) {
+        console.log('you are 20 years old');
+    }
+
+    const ninjas = ['Ali', 'Bella', 'Mario', 'Rali', 'Luigi'];
+    if (ninjas.length > 3) {
+        console.log('You have exceeded the limit of Ninjas');
+    }
+
+    const password = 'password1234';
+    if (password.length >= 12) {
+        console.log('Password is mighty strong.');
+    } else if (password.length >= 8) {
+        console.log('Password is long enough.');
+    } else {
+        console.log('your password is not long enough.');
+    }
+
+
+}
+
+{
+    // logical operator - OR || and AND &&
+    console.log('-------------------logical operator-------------------');
+
+    const password = 'password1234';
+    if (password.length >= 12 && password.includes('@' || '!' || '$' || '%' || '&')) {
+        console.log('Password is mighty strong.');
+    } else if (password.length >= 8 && password.includes('@' || '!' || '$' || '%' || '&')) {
+        console.log('Password is long enough and strong.');
+    } else if (password.length >= 8 && !password.includes('@' || '!' || '$' || '%' || '&')) {
+        console.log('Password is just long enough but not strong.');
+    } else {
+        console.log('your password is not long enough.');
+    }
+}
+
+{
+    // break and continue
+    console.log('-------------------break and continue-------------------');
+
+    const score = [50, 25, 0, 30, 100, 20, 10];
+    for (let i = 0; i < score.length; i++) {
+        if (score[i] === 0) {
+            continue;
+        }
+        console.log('your score: ', score[i]);
+        if (score[i] === 100) {
+            console.log('Congrats, you got the top score!');
+            break;
+        }
+    }
+
+}
+
+{
+    // switch statement
+    console.log('-------------------Switch statement-------------------');
+    const grade = 'D';
+    switch (grade) {
+        case 'A':
+            console.log('You\'ve got an A!');
+            break;
+        case 'B':
+            console.log('You\'ve got a B!');
+            break;
+        case 'C':
+            console.log('You\'ve got a C!');
+            break;
+        case 'D':
+            console.log('You\'ve got a D!');
+            break;
+        case 'E':
+            console.log('You\'ve got a E!');
+            break;
+        default:
+            console.log('Not a valid grade.');
+            break;
+    }
+}
+
+{
+    // variables & block scope
+    console.log('-------------------variables & block scope-------------------');
+    let age = 30;
+
+    if(true){
+        console.log()
+    }
+}
