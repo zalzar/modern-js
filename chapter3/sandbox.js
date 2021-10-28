@@ -194,3 +194,21 @@
 
 // let resultH = String(50);
 // console.log(resultH, typeof resultH); 
+
+
+// // ======================================================Control Flow======================================================
+// for loop
+for (let i = 0; i < 5; i++) {
+    console.log('in loop:', i);
+}
+
+const namesD = ['Ali', 'Rali', 'Shaun'];
+for (let i = 0; i < namesD.length; i++) {
+    console.log(namesD[i]);
+}
+
+for (let i = 0; i < namesD.length; i++) {
+    let html=`<div>${namesD[i]}</div>`;
+    console.log(html);
+}
+
