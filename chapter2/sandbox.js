@@ -140,13 +140,69 @@
 // // ======================================================null and undefined======================================================
 
 // let ageA;
-// console.log(ageA, ageA +3 , `the age is ${ageA}`);
+// console.log(ageA, ageA + 3, `the age is ${ageA}`);
 
 // let ageB = null;
-// console.log(ageB, ageB +3 , `the age is ${ageB}`);
+// console.log(ageB, ageB + 3, `the age is ${ageB}`);
 
 
 // // ======================================================boolean======================================================
 
-// // booleans and 
+// // booleans and comparisons
+// // remember these are not the same. one is boolean and the other one is 
+// console.log(true, false, 'true', 'false');
+// let namesA = ['Ali', 'Mario', 'Luigi']
+// // methods can return booleans
+// let email = 'bella@gmail.com';
 
+// let resultF = email.includes('@');
+// console.log(resultF); // this returns ture
+// console.log(namesA.includes('Rali')); // this returns false
+// // comparisons operators
+
+// let ageC = 25;
+
+// console.log(ageC == 25); // this returns ture
+// console.log(ageC == 35); // this returns false
+// // != is "not equal"
+// console.log(ageC != 35); // this returns true
+// console.log(ageC != 25); // this returns false
+// // Other comparison operators are >, <, >=, <= 
+
+// // JS is an case sensetive language so 'Ali' is not euqal to 'ali'
+// let nameB = 'Ali', nameC = 'ali';
+// console.log(nameB == 'ali'); // this returns false
+// console.log(nameB == 'Ali'); // this returns true
+
+// let ageD = 25;
+// // loose comparison, compares only the value
+// console.log(ageD == 25); // this returns true
+// console.log(ageD == '25'); // this returns true
+
+// // strict comparison compares the value as well as the type, so:
+// console.log(ageD === 25); // this returns true
+// console.log(ageD === '25'); // this returns false
+
+// // type conversion
+// let scoreA = '100';
+
+// console.log(scoreA+1); // this returns 1001
+// console.log(Number(scoreA)+1); // this returns 101
+
+// let resultG = Number('hello');
+// console.log(resultG); // this returns NaN (NaN : Not a Number)
+
+// let resultH = String(50);
+// console.log(resultH, typeof resultH); 
+
+
+// // ======================================================Control Flow======================================================
+// for loop
+for (let i = 0; i < 5; i++) {
+    console.log('in loop:', i);
+}
+
+const namesD = ['Ali', 'Rali', 'Shaun'];
+for (let i = 0; i < namesD.length; i++) {
+    console.log(namesD[i]);
+}
