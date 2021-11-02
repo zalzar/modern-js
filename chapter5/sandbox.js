@@ -49,3 +49,77 @@ console.log('-------------------Chapter 5 - Objects-------------------');
     user.logout();
     user.logBlog();
 }
+
+{
+    // -------------------object literals-------------------
+
+
+    let user = {
+        name: 'Bella',
+        age: '32',
+        email: 'Blex@gmail.com',
+        location: 'Luxembourg',
+        blogs: [
+            { title: 'The first blog title', likes: 30 },
+            { title: 'The second blog title', likes: 50 }
+        ],
+        login() {
+            console.log('the user is logged in');
+        },
+        printBlogs() {
+            console.log('this user has written the following blogs:')
+            this.blogs.forEach(blog => {
+                console.log(blog.title, blog.likes);
+            });
+        }
+    };
+
+    //user.login();
+    user.printBlogs();
+}
+
+{
+    // -------------------Math object-------------------
+    console.log(Math);
+    console.log(Math.PI);
+    console.log(Math.E);
+
+    const area = 7.7;
+
+    console.log(Math.round(area));
+    console.log(Math.floor(area));
+    console.log(Math.ceil(area));
+    console.log(Math.trunc(area));
+
+    // generate random numbers
+    const random = Math.random();
+    console.log(Math.round(random * 1000));
+
+}
+
+console.log('-------------------Chapter 5 - Primitive vs Reference value-------------------');
+{
+    // -------------------Primitive value-------------------
+    console.log('-------------------Primitive value-------------------');
+    let scoreOne = 50;
+    let scoreTwo = scoreOne;
+
+    console.log(`scoreOne: ${scoreOne}`, `scoreTwo: ${scoreTwo}`);
+
+    scoreOne = 100;
+
+    console.log(`scoreOne: ${scoreOne}`, `scoreTwo: ${scoreTwo}`);
+
+    // -------------------Reference value-------------------
+    console.log('-------------------Reference value-------------------');
+
+    const userOne = { name: 'Ryu', age: 30 };
+    const userTwo = userOne;
+
+    console.log(userOne, userTwo);
+
+    userOne.age = 40;
+
+    console.log(userOne, userTwo);
+
+}
