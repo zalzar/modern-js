@@ -48,31 +48,59 @@ console.log('-------------------Chapter 6 - DOM-------------------');
 
     // para.innerText = 'this text was changed by js';
 
+    // const paras = document.querySelectorAll('p');
+    // paras.forEach(para => {
+    //     //console.log(para.innerText);
+    //     para.innerText += '. new text from js';
+    //     console.log(para.innerText);
 
-    const paras = document.querySelectorAll('p');
-    paras.forEach(para => {
-        //console.log(para.innerText);
-        para.innerText += '. new text from js';
-        console.log(para.innerText);
-
-    });
+    // });
 }
 
 {
-    console.log('-------------------Change the HTML of page-------------------');
+    // console.log('-------------------Change the HTML of page-------------------');
 
-    const content = document.querySelector('.content');
-    content.innerHTML += '<h2>This is a new h2</h2>';
+    // const content = document.querySelector('.content');
+    // content.innerHTML += '<h2>This is a new h2</h2>';
 }
 
 {
-    console.log('-------------------Change the HTML of page-------------------');
-    const content = document.querySelector('.content');
+    // console.log('-------------------Change the HTML of page-------------------');
+    // const content = document.querySelector('.content');
 
-    const people = ['Ali', 'Rali', 'Luigi'];
+    // const people = ['Ali', 'Rali', 'Luigi'];
 
-    people.forEach(person => {
-        content.innerHTML += `<p>${person}</p>`;
-    });
+    // people.forEach(person => {
+    //     content.innerHTML += `<p>${person}</p>`;
+    // });
+}
 
+{
+    // change an attribute
+    const link = document.querySelector('a');
+
+    console.log(link.getAttribute('href'));
+    link.setAttribute('href', 'https://www.facebook.com');
+    link.innerText = 'Facebook';
+}
+
+{
+    // change error to success
+
+    const mssg = document.querySelector('div.error');
+    console.log(mssg.getAttribute('class'));
+    mssg.setAttribute('class', 'Success');
+    console.log(mssg.getAttribute('class'));
+    mssg.innerText = 'Success';
+}
+
+{
+    const title = document.querySelector('h1');
+
+    //title.setAttribute('style','margin:50px;');
+
+    console.log(title.style);
+    console.log(title.style.color);
+    title.style.margin = '50px';
+    title.style.color = 'crimson';
 }
