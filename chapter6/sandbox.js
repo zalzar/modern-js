@@ -103,4 +103,33 @@ console.log('-------------------Chapter 6 - DOM-------------------');
     console.log(title.style.color);
     title.style.margin = '50px';
     title.style.color = 'crimson';
+
+    title.style.fontSize = '60px';
+    title.style.margin = '';
 }
+
+{
+    console.log('-------------------Add/Remove Classes-------------------');
+
+    const content = document.querySelector('p');
+    console.log(content.classList);
+    content.classList.add('errorZ');
+    content.classList.remove('errorZ');
+    content.classList.add('successZ');
+
+    console.log('-------------------Add/Remove Classes tutorials-------------------');
+    const errSuc = document.querySelectorAll("p:not([class])")
+
+    errSuc.forEach(es => {
+        if (es.textContent.includes('success')) {
+            es.classList.add('successZ');
+        }else if(es.textContent.includes('error')) {
+            es.classList.add('errorZ');
+        }
+    });
+
+    console.log(errSuc);
+
+
+}
+
