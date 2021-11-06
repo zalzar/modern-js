@@ -18,8 +18,11 @@ Chapter 5
 
 Chapter 6
 44. Interacting with the Browser
+
 45. The DOM Explained
+
 46. The Query Selector
+
 47. Other Ways to Query the DOM
 48. Adding & Changing Page Content
 49. Getting & Setting Attributes
