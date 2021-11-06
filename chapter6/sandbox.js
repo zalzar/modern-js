@@ -118,15 +118,48 @@ console.log('-------------------Chapter 6 - DOM-------------------');
     content.classList.add('successZ');
     content.classList.toggle('successZ');
     console.log('-------------------Add/Remove Classes tutorials-------------------');
-    
+
     const errSuc = document.querySelectorAll("p:not([class])")
     errSuc.forEach(es => {
         if (es.textContent.includes('success')) {
             es.classList.add('successZ');
-        }else if(es.textContent.includes('error')) {
+        } else if (es.textContent.includes('error')) {
             es.classList.add('errorZ');
         }
     });
     console.log(errSuc);
 }
 
+{
+    // to access children elements
+    const article = document.querySelector('article');
+    console.log(article.children);
+    console.log(Array.from(article.children));
+
+
+    Array.from(article.children).forEach(child=>{
+        child.classList.add('article-element');
+    });
+
+        // to access parent elements
+        const title = document.querySelector('h2');
+        console.log(title.parentElement);
+    
+        // further parent
+        console.log(title.parentElement.parentElement);
+
+        // next sibling element
+        console.log(title.nextElementSibling);
+        
+        // previous sibling element
+        console.log(title.previousElementSibling);
+
+        // chaining
+        console.log(title.nextElementSibling.parentElement.children);
+
+}
+{
+
+
+
+}
