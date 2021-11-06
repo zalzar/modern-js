@@ -1,8 +1,10 @@
-# modern-js
+modern-js
 
-#Hello everyone
-#This is my modern Javascript training which is tutored by shaunjp. 
-#I'm learning everything as i go through them, so i might be adding more stuff about different topics (github, html, ...) while learning modern-js
+Hello everyone
+
+This is my modern Javascript training which is tutored by shaunjp. 
+
+I'm learning everything as i go through them, so i might be adding more stuff about different topics (github, html, ...) while learning modern-js
 
 List of lessons:
 
