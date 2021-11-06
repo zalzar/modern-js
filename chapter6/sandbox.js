@@ -116,10 +116,10 @@ console.log('-------------------Chapter 6 - DOM-------------------');
     content.classList.add('errorZ');
     content.classList.remove('errorZ');
     content.classList.add('successZ');
-
+    content.classList.toggle('successZ');
     console.log('-------------------Add/Remove Classes tutorials-------------------');
+    
     const errSuc = document.querySelectorAll("p:not([class])")
-
     errSuc.forEach(es => {
         if (es.textContent.includes('success')) {
             es.classList.add('successZ');
@@ -127,9 +127,6 @@ console.log('-------------------Chapter 6 - DOM-------------------');
             es.classList.add('errorZ');
         }
     });
-
     console.log(errSuc);
-
-
 }
 
