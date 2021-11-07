@@ -131,35 +131,49 @@ console.log('-------------------Chapter 6 - DOM-------------------');
 }
 
 {
+    //lesson 52
     // to access children elements
     const article = document.querySelector('article');
     console.log(article.children);
     console.log(Array.from(article.children));
 
 
-    Array.from(article.children).forEach(child=>{
+    Array.from(article.children).forEach(child => {
         child.classList.add('article-element');
     });
 
-        // to access parent elements
-        const title = document.querySelector('h2');
-        console.log(title.parentElement);
-    
-        // further parent
-        console.log(title.parentElement.parentElement);
+    // to access parent elements
+    const title = document.querySelector('h2');
+    console.log(title.parentElement);
 
-        // next sibling element
-        console.log(title.nextElementSibling);
-        
-        // previous sibling element
-        console.log(title.previousElementSibling);
+    // further parent
+    console.log(title.parentElement.parentElement);
 
-        // chaining
-        console.log(title.nextElementSibling.parentElement.children);
+    // next sibling element
+    console.log(title.nextElementSibling);
+
+    // previous sibling element
+    console.log(title.previousElementSibling);
+
+    // chaining
+    console.log(title.nextElementSibling.parentElement.children);
 
 }
+
 {
+    //lesson 53
+    const button = document.querySelector('button');
+    // button.addEventListener('click',()=>{
+    //     console.log('I\'ve been clicked');
+    // });
+    const items = document.querySelectorAll('div.lesson53 li');
+    //console.log(items);
 
-
-
+    items.forEach(item => {
+        item.addEventListener('click', e => {
+            console.log(e);
+            console.log(e.target);
+            e.target.style.textDecoration = 'line-through';
+        });
+    });
 }
