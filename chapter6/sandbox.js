@@ -177,3 +177,34 @@ console.log('-------------------Chapter 6 - DOM-------------------');
         });
     });
 }
+
+{
+    //lesson 54
+
+    const ul = document.querySelector('ul');
+    // ul.remove();
+
+    const button = document.querySelector('button');
+    button.addEventListener('click', () => {
+        // we could do this:
+        //ul.innerHTML += '<li>something new</li>';
+
+        //or we could approach it this way:
+        const li = document.createElement('li');
+        li.textContent = 'Something new';
+        //ul.append(li); //to add at the buttom
+        ul.prepend(li); //to add at the top
+
+    });
+    // button.addEventListener('click',()=>{
+    //     console.log('I\'ve been clicked');
+    // });
+    const items = document.querySelectorAll('div.lesson53 li');
+    //console.log(items);
+
+    items.forEach(item => {
+        item.addEventListener('click', e => {
+            e.target.remove();
+        });
+    });
+}
