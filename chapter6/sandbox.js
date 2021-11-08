@@ -76,110 +76,140 @@ console.log('-------------------Chapter 6 - DOM-------------------');
 }
 
 {
-    // change an attribute
-    const link = document.querySelector('a');
+    // // change an attribute
+    // const link = document.querySelector('a');
 
-    console.log(link.getAttribute('href'));
-    link.setAttribute('href', 'https://www.facebook.com');
-    link.innerText = 'Facebook';
+    // console.log(link.getAttribute('href'));
+    // link.setAttribute('href', 'https://www.facebook.com');
+    // link.innerText = 'Facebook';
 }
 
 {
-    // change error to success
+    // // change error to success
 
-    const mssg = document.querySelector('div.error');
-    console.log(mssg.getAttribute('class'));
-    mssg.setAttribute('class', 'Success');
-    console.log(mssg.getAttribute('class'));
-    mssg.innerText = 'Success';
+    // const mssg = document.querySelector('div.error');
+    // console.log(mssg.getAttribute('class'));
+    // mssg.setAttribute('class', 'Success');
+    // console.log(mssg.getAttribute('class'));
+    // mssg.innerText = 'Success';
 }
 
 {
-    const title = document.querySelector('h1');
+    // const title = document.querySelector('h1');
 
-    //title.setAttribute('style','margin:50px;');
+    // //title.setAttribute('style','margin:50px;');
 
-    console.log(title.style);
-    console.log(title.style.color);
-    title.style.margin = '50px';
-    title.style.color = 'crimson';
+    // console.log(title.style);
+    // console.log(title.style.color);
+    // title.style.margin = '50px';
+    // title.style.color = 'crimson';
 
-    title.style.fontSize = '60px';
-    title.style.margin = '';
+    // title.style.fontSize = '60px';
+    // title.style.margin = '';
 }
 
 {
-    console.log('-------------------Add/Remove Classes-------------------');
+    // console.log('-------------------Add/Remove Classes-------------------');
 
-    const content = document.querySelector('p');
-    console.log(content.classList);
-    content.classList.add('errorZ');
-    content.classList.remove('errorZ');
-    content.classList.add('successZ');
-    content.classList.toggle('successZ');
-    console.log('-------------------Add/Remove Classes tutorials-------------------');
+    // const content = document.querySelector('p');
+    // console.log(content.classList);
+    // content.classList.add('errorZ');
+    // content.classList.remove('errorZ');
+    // content.classList.add('successZ');
+    // content.classList.toggle('successZ');
+    // console.log('-------------------Add/Remove Classes tutorials-------------------');
 
-    const errSuc = document.querySelectorAll("p:not([class])")
-    errSuc.forEach(es => {
-        if (es.textContent.includes('success')) {
-            es.classList.add('successZ');
-        } else if (es.textContent.includes('error')) {
-            es.classList.add('errorZ');
-        }
-    });
-    console.log(errSuc);
-}
-
-{
-    //lesson 52
-    // to access children elements
-    const article = document.querySelector('article');
-    console.log(article.children);
-    console.log(Array.from(article.children));
-
-
-    Array.from(article.children).forEach(child => {
-        child.classList.add('article-element');
-    });
-
-    // to access parent elements
-    const title = document.querySelector('h2');
-    console.log(title.parentElement);
-
-    // further parent
-    console.log(title.parentElement.parentElement);
-
-    // next sibling element
-    console.log(title.nextElementSibling);
-
-    // previous sibling element
-    console.log(title.previousElementSibling);
-
-    // chaining
-    console.log(title.nextElementSibling.parentElement.children);
-
-}
-
-{
-    //lesson 53
-    const button = document.querySelector('button');
-    // button.addEventListener('click',()=>{
-    //     console.log('I\'ve been clicked');
+    // const errSuc = document.querySelectorAll("p:not([class])")
+    // errSuc.forEach(es => {
+    //     if (es.textContent.includes('success')) {
+    //         es.classList.add('successZ');
+    //     } else if (es.textContent.includes('error')) {
+    //         es.classList.add('errorZ');
+    //     }
     // });
-    const items = document.querySelectorAll('div.lesson53 li');
-    //console.log(items);
-
-    items.forEach(item => {
-        item.addEventListener('click', e => {
-            console.log(e);
-            console.log(e.target);
-            e.target.style.textDecoration = 'line-through';
-        });
-    });
+    // console.log(errSuc);
 }
 
 {
-    //lesson 54
+    // //lesson 52
+    // // to access children elements
+    // const article = document.querySelector('article');
+    // console.log(article.children);
+    // console.log(Array.from(article.children));
+
+
+    // Array.from(article.children).forEach(child => {
+    //     child.classList.add('article-element');
+    // });
+
+    // // to access parent elements
+    // const title = document.querySelector('h2');
+    // console.log(title.parentElement);
+
+    // // further parent
+    // console.log(title.parentElement.parentElement);
+
+    // // next sibling element
+    // console.log(title.nextElementSibling);
+
+    // // previous sibling element
+    // console.log(title.previousElementSibling);
+
+    // // chaining
+    // console.log(title.nextElementSibling.parentElement.children);
+}
+
+{
+    // //lesson 53
+    // const button = document.querySelector('button');
+    // // button.addEventListener('click',()=>{
+    // //     console.log('I\'ve been clicked');
+    // // });
+    // const items = document.querySelectorAll('div.lesson53 li');
+    // //console.log(items);
+
+    // items.forEach(item => {
+    //     item.addEventListener('click', e => {
+    //         console.log(e);
+    //         console.log(e.target);
+    //         e.target.style.textDecoration = 'line-through';
+    //     });
+    // });
+}
+
+{
+    // //lesson 54
+
+    // const ul = document.querySelector('ul');
+    // // ul.remove();
+
+    // const button = document.querySelector('button');
+    // button.addEventListener('click', () => {
+    //     // we could do this:
+    //     //ul.innerHTML += '<li>something new</li>';
+
+    //     //or we could approach it this way:
+    //     const li = document.createElement('li');
+    //     li.textContent = 'Something new';
+    //     //ul.append(li); //to add at the buttom
+    //     ul.prepend(li); //to add at the top
+
+    // });
+    // // button.addEventListener('click',()=>{
+    // //     console.log('I\'ve been clicked');
+    // // });
+    // const items = document.querySelectorAll('div.lesson53 li');
+    // //console.log(items);
+
+    // items.forEach(item => {
+    //     item.addEventListener('click', e => {
+    //         e.target.remove();
+    //     });
+    // });
+}
+
+{
+    //lesson 55
 
     const ul = document.querySelector('ul');
     // ul.remove();
@@ -192,19 +222,25 @@ console.log('-------------------Chapter 6 - DOM-------------------');
         //or we could approach it this way:
         const li = document.createElement('li');
         li.textContent = 'Something new';
-        //ul.append(li); //to add at the buttom
-        ul.prepend(li); //to add at the top
+        ul.append(li); //to add at the buttom
+        //ul.prepend(li); //to add at the top
 
     });
-    // button.addEventListener('click',()=>{
-    //     console.log('I\'ve been clicked');
-    // });
-    const items = document.querySelectorAll('div.lesson53 li');
-    //console.log(items);
+    // // button.addEventListener('click',()=>{
+    // //     console.log('I\'ve been clicked');
+    // // });
+    // const items = document.querySelectorAll('div.lesson53 li');
+    // //console.log(items);
 
-    items.forEach(item => {
-        item.addEventListener('click', e => {
+    // items.forEach(item => {
+    //     item.addEventListener('click', e => {
+    //         e.target.remove();
+    //         e.stopPropagation();
+    //     });
+    // });
+    ul.addEventListener('click', e => {
+        if (e.target.tagName === 'LI') {
             e.target.remove();
-        });
+        }
     });
 }
