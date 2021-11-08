@@ -252,14 +252,30 @@ console.log('-------------------Chapter 6 - DOM-------------------');
     });
 
     const box = document.querySelector('.box');
-    box.addEventListener('mousemove',e=>{
+    box.addEventListener('mousemove', e => {
         //console.log(e);
         //console.log(e.offsetX);
         //console.log(e.offsetY);
-        box.textContent=`x pos - ${e.offsetX} y pos - ${e.offsetY}`;
+        box.textContent = `x pos - ${e.offsetX} y pos - ${e.offsetY}`;
     });
 
-    document.addEventListener('wheel',e=>{
-        console.log(e.pageX,e.pageY);
+    document.addEventListener('wheel', e => {
+        console.log(e.pageX, e.pageY);
+    });
+}
+{
+    // lesson 57 - Building a Popup
+    const button = document.querySelector('button');
+    const popup = document.querySelector('.popup-wrapper');
+    const close = document.querySelector('.popup-close');
+
+    button.addEventListener('click', () => {
+        popup.style.display = 'block';
+    });
+    close.addEventListener('click', () => {
+        popup.style.display = 'none';
+    });
+    popup.addEventListener('click', () => {
+        popup.style.display = 'none';
     });
 }
