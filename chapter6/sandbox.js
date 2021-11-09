@@ -177,8 +177,7 @@ console.log('-------------------Chapter 6 - DOM-------------------');
     // });
 }
 
-{
-    // //lesson 54
+{// //lesson 54
 
     // const ul = document.querySelector('ul');
     // // ul.remove();
@@ -207,25 +206,24 @@ console.log('-------------------Chapter 6 - DOM-------------------');
     //     });
     // });
 }
+{ //lesson 55
+    
 
-{
-    //lesson 55
+    // const ul = document.querySelector('ul');
+    // // ul.remove();
 
-    const ul = document.querySelector('ul');
-    // ul.remove();
+    // const button = document.querySelector('button');
+    // button.addEventListener('click', () => {
+    //     // we could do this:
+    //     //ul.innerHTML += '<li>something new</li>';
 
-    const button = document.querySelector('button');
-    button.addEventListener('click', () => {
-        // we could do this:
-        //ul.innerHTML += '<li>something new</li>';
+    //     //or we could approach it this way:
+    //     const li = document.createElement('li');
+    //     li.textContent = 'Something new';
+    //     ul.append(li); //to add at the buttom
+    //     //ul.prepend(li); //to add at the top
 
-        //or we could approach it this way:
-        const li = document.createElement('li');
-        li.textContent = 'Something new';
-        ul.append(li); //to add at the buttom
-        //ul.prepend(li); //to add at the top
-
-    });
+    // });
     // // button.addEventListener('click',()=>{
     // //     console.log('I\'ve been clicked');
     // // });
@@ -238,33 +236,31 @@ console.log('-------------------Chapter 6 - DOM-------------------');
     //         e.stopPropagation();
     //     });
     // });
-    ul.addEventListener('click', e => {
-        if (e.target.tagName === 'LI') {
-            e.target.remove();
-        }
-    });
+    // ul.addEventListener('click', e => {
+    //     if (e.target.tagName === 'LI') {
+    //         e.target.remove();
+    //     }
+    // });
 }
-{
-    // lesson 56 - More DOM Events
-    const copy = document.querySelector('.copy-me');
-    copy.addEventListener('copy', () => {
-        console.log('Oi, my contents is copyright');
-    });
+{// lesson 56 - More DOM Events
+    // const copy = document.querySelector('.copy-me');
+    // copy.addEventListener('copy', () => {
+    //     console.log('Oi, my contents is copyright');
+    // });
 
-    const box = document.querySelector('.box');
-    box.addEventListener('mousemove', e => {
-        //console.log(e);
-        //console.log(e.offsetX);
-        //console.log(e.offsetY);
-        box.textContent = `x pos - ${e.offsetX} y pos - ${e.offsetY}`;
-    });
+    // const box = document.querySelector('.box');
+    // box.addEventListener('mousemove', e => {
+    //     //console.log(e);
+    //     //console.log(e.offsetX);
+    //     //console.log(e.offsetY);
+    //     box.textContent = `x pos - ${e.offsetX} y pos - ${e.offsetY}`;
+    // });
 
-    document.addEventListener('wheel', e => {
-        console.log(e.pageX, e.pageY);
-    });
+    // document.addEventListener('wheel', e => {
+    //     console.log(e.pageX, e.pageY);
+    // });
 }
-{
-    // // lesson 57 - Building a Popup
+{// lesson 57 - Building a Popup
     // const button = document.querySelector('button');
     // const popup = document.querySelector('.popup-wrapper');
     // const close = document.querySelector('.popup-close');
@@ -279,7 +275,6 @@ console.log('-------------------Chapter 6 - DOM-------------------');
     //     popup.style.display = 'none';
     // });
 }
-{
-    // lesson 58 - Events Inside Forms
+{// lesson 58 - Events Inside Forms
 
 }
