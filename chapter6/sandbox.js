@@ -264,18 +264,22 @@ console.log('-------------------Chapter 6 - DOM-------------------');
     });
 }
 {
-    // lesson 57 - Building a Popup
-    const button = document.querySelector('button');
-    const popup = document.querySelector('.popup-wrapper');
-    const close = document.querySelector('.popup-close');
+    // // lesson 57 - Building a Popup
+    // const button = document.querySelector('button');
+    // const popup = document.querySelector('.popup-wrapper');
+    // const close = document.querySelector('.popup-close');
 
-    button.addEventListener('click', () => {
-        popup.style.display = 'block';
-    });
-    close.addEventListener('click', () => {
-        popup.style.display = 'none';
-    });
-    popup.addEventListener('click', () => {
-        popup.style.display = 'none';
-    });
+    // button.addEventListener('click', () => {
+    //     popup.style.display = 'block';
+    // });
+    // close.addEventListener('click', () => {
+    //     popup.style.display = 'none';
+    // });
+    // popup.addEventListener('click', () => {
+    //     popup.style.display = 'none';
+    // });
+}
+{
+    // lesson 58 - Events Inside Forms
+
 }
