@@ -1,4 +1,4 @@
-console.log('-------------------Chapter 6 - DOM-------------------');
+console.log('-------------------Chapter 6 - The Document Object Model-------------------');
 {
     // const para1 = document.querySelector('p');
     // console.log(para1);
@@ -20,8 +20,6 @@ console.log('-------------------Chapter 6 - DOM-------------------');
     // const errors = document.querySelector('.error');
     // console.log(errors);
 }
-
-
 {
     // console.log('-------------------Get elements by-------------------');
 
@@ -39,7 +37,6 @@ console.log('-------------------Chapter 6 - DOM-------------------');
     // console.log(paras);
     // console.log(paras[0]);
 }
-
 {
     // console.log('-------------------Change the text inside HTML-------------------');
 
@@ -56,14 +53,12 @@ console.log('-------------------Chapter 6 - DOM-------------------');
 
     // });
 }
-
 {
     // console.log('-------------------Change the HTML of page-------------------');
 
     // const content = document.querySelector('.content');
     // content.innerHTML += '<h2>This is a new h2</h2>';
 }
-
 {
     // console.log('-------------------Change the HTML of page-------------------');
     // const content = document.querySelector('.content');
@@ -74,7 +69,6 @@ console.log('-------------------Chapter 6 - DOM-------------------');
     //     content.innerHTML += `<p>${person}</p>`;
     // });
 }
-
 {
     // // change an attribute
     // const link = document.querySelector('a');
@@ -83,7 +77,6 @@ console.log('-------------------Chapter 6 - DOM-------------------');
     // link.setAttribute('href', 'https://www.facebook.com');
     // link.innerText = 'Facebook';
 }
-
 {
     // // change error to success
 
@@ -93,7 +86,6 @@ console.log('-------------------Chapter 6 - DOM-------------------');
     // console.log(mssg.getAttribute('class'));
     // mssg.innerText = 'Success';
 }
-
 {
     // const title = document.querySelector('h1');
 
@@ -107,7 +99,6 @@ console.log('-------------------Chapter 6 - DOM-------------------');
     // title.style.fontSize = '60px';
     // title.style.margin = '';
 }
-
 {
     // console.log('-------------------Add/Remove Classes-------------------');
 
@@ -129,7 +120,6 @@ console.log('-------------------Chapter 6 - DOM-------------------');
     // });
     // console.log(errSuc);
 }
-
 {
     // //lesson 52
     // // to access children elements
@@ -158,9 +148,7 @@ console.log('-------------------Chapter 6 - DOM-------------------');
     // // chaining
     // console.log(title.nextElementSibling.parentElement.children);
 }
-
-{
-    // //lesson 53
+{//lesson 53
     // const button = document.querySelector('button');
     // // button.addEventListener('click',()=>{
     // //     console.log('I\'ve been clicked');
@@ -176,7 +164,6 @@ console.log('-------------------Chapter 6 - DOM-------------------');
     //     });
     // });
 }
-
 {// //lesson 54
 
     // const ul = document.querySelector('ul');
@@ -275,6 +262,8 @@ console.log('-------------------Chapter 6 - DOM-------------------');
     //     popup.style.display = 'none';
     // });
 }
+console.log('-------------------Chapter 7 - Forms & Form Events-------------------');
+
 {// lesson 58 - Events Inside Forms
 
 }
