@@ -33,3 +33,12 @@ Chapter 6
 55. Event Bubbling (and delegation)
 56. More DOM Events
 57. Building a Popup
+
+Chapter 7
+
+58. Events Inside Forms (intro)
+59. Submit Events
+60. Regular Expressions
+61. Testing RegEx Patterns
+62. Basic Form Validation
+63. Keyboard Events
