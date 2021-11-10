@@ -1,4 +1,4 @@
-console.log('-------------------Chapter 6 - DOM-------------------');
+console.log('-------------------Chapter 6 - The Document Object Model-------------------');
 {
     // const para1 = document.querySelector('p');
     // console.log(para1);
@@ -120,7 +120,8 @@ console.log('-------------------Chapter 6 - DOM-------------------');
     // });
     // console.log(errSuc);
 }
-{//lesson 52
+{
+    // //lesson 52
     // // to access children elements
     // const article = document.querySelector('article');
     // console.log(article.children);
@@ -163,7 +164,7 @@ console.log('-------------------Chapter 6 - DOM-------------------');
     //     });
     // });
 }
-{//lesson 54
+{// //lesson 54
 
     // const ul = document.querySelector('ul');
     // // ul.remove();
@@ -192,7 +193,8 @@ console.log('-------------------Chapter 6 - DOM-------------------');
     //     });
     // });
 }
-{//lesson 55
+{ //lesson 55
+    
 
     // const ul = document.querySelector('ul');
     // // ul.remove();
@@ -259,4 +261,12 @@ console.log('-------------------Chapter 6 - DOM-------------------');
     // popup.addEventListener('click', () => {
     //     popup.style.display = 'none';
     // });
+}
+console.log('-------------------Chapter 7 - Forms & Form Events-------------------');
+
+{// lesson 58 - Events Inside Forms
+
+}
+{// lesson 59 - Submit Events
+
 }
