@@ -293,3 +293,18 @@ console.log('-------------------Chapter 7 - Forms & Form Events-----------------
     // let result = username.search(pattern);
     // console.log(result);// fail is -1
 }
+{// Lesson 62 - Basic Form Validation
+    const form = document.querySelector('.signup-form');
+    const feedback = document.querySelector('.feedback');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        const username = form.username.value;
+        const UsernamePattern = /[a-zA-Z]{6,12}/;
+        if (UsernamePattern.test(username)) {
+            feedback.textContent = `${username} passed the regex test`;
+        } else {
+            feedback.textContent = `${username} result failed the regex test`;
+        }
+    });
+}
