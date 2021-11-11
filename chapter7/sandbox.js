@@ -194,7 +194,7 @@ console.log('-------------------Chapter 6 - The Document Object Model-----------
     // });
 }
 { //lesson 55
-    
+
 
     // const ul = document.querySelector('ul');
     // // ul.remove();
@@ -263,17 +263,33 @@ console.log('-------------------Chapter 6 - The Document Object Model-----------
     // });
 }
 console.log('-------------------Chapter 7 - Forms & Form Events-------------------');
-
 {// lesson 58 - Events Inside Forms
 
 }
 {// Lesson 59 - Submit Events
-    const form = document.querySelector('.signup-form');
+    // const form = document.querySelector('.signup-form');
 
-    //const username= document.querySelector('#username');
-    form.addEventListener('submit', e => {
-        e.preventDefault();
-        console.log(form.username.value, form.lastName.value);
-    });
+    // //const username= document.querySelector('#username');
+    // form.addEventListener('submit', e => {
+    //     e.preventDefault();
+    //     console.log(form.username.value, form.lastName.value);
+    // });
+}
+{// Lesson 60 - Regular Expressions
 
+}
+{// Lesson 61 - Regular Expressions
+    // const username = '567superuser';
+    // const pattern = /[A-z]{6,}/;
+
+    // // let result = pattern.test(username);
+    // // if (result) {
+    // //     console.log(`${username} passed the regex test`);           
+    // // }else{
+    // //     console.log(`${username} result failed the regex test`);        
+    // // }
+
+    // //Another way to verify
+    // let result = username.search(pattern);
+    // console.log(result);// fail is -1
 }
