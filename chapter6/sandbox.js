@@ -207,7 +207,7 @@ console.log('-------------------Chapter 6 - DOM-------------------');
     // });
 }
 { //lesson 55
-    
+
 
     // const ul = document.querySelector('ul');
     // // ul.remove();
@@ -274,7 +274,4 @@ console.log('-------------------Chapter 6 - DOM-------------------');
     // popup.addEventListener('click', () => {
     //     popup.style.display = 'none';
     // });
-}
-{// lesson 58 - Events Inside Forms
-
 }
