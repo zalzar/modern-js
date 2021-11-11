@@ -267,6 +267,13 @@ console.log('-------------------Chapter 7 - Forms & Form Events-----------------
 {// lesson 58 - Events Inside Forms
 
 }
-{// lesson 59 - Submit Events
+{// Lesson 59 - Submit Events
+    const form = document.querySelector('.signup-form');
+
+    //const username= document.querySelector('#username');
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        console.log(form.username.value, form.lastName.value);
+    });
 
 }
