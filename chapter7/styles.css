@@ -90,7 +90,7 @@ button {
   } */
 
 /*Lesson 62*/
-body{
+/* body{
     background: #eee;
   }
   form{
@@ -106,4 +106,38 @@ body{
   }
   .feedback{
       color: crimson;
-  }
+  } */
+
+/*Lesson 63*/
+body {
+    background: #eee;
+}
+
+form {
+    max-width : 300px;
+    margin    : 40px auto;
+    background: white;
+    padding   : 10px;
+}
+
+input {
+    display: block;
+    margin : 20px auto;
+    padding: 5px;
+}
+
+.feedback {
+    color: crimson;
+}
+
+.success {
+    border: 2px solid limegreen !important;
+    border-radius: 4px !important;
+
+}
+
+.error {
+    border: 2px solid crimson !important;
+    border-radius: 4px !important;
+
+}

@@ -294,20 +294,32 @@ console.log('-------------------Chapter 7 - Forms & Form Events-----------------
     // console.log(result);// fail is -1
 }
 {// Lesson 62 - Basic Form Validation
-    const form = document.querySelector('.signup-form');
-    const feedback = document.querySelector('.feedback');
-    form.addEventListener('submit', e => {
-        e.preventDefault();
-        const pattern = /^[a-zA-Z]{6,12}$/;
-        const username = form.username.value;
+    // const form = document.querySelector('.signup-form');
+    // const feedback = document.querySelector('.feedback');
+    // form.addEventListener('submit', e => {
+    //     e.preventDefault();
+    //     const pattern = /^[a-zA-Z]{6,12}$/;
+    //     const username = form.username.value;
 
-        if(pattern.test(username)){
-            feedback.textContent="Username is valid";
-        }else{
-            feedback.textContent="Username should be 6 to 12 char long";
+    //     if (pattern.test(username)) {
+    //         feedback.textContent = "Username is valid";
+    //     } else {
+    //         feedback.textContent = "Username should be 6 to 12 char long";
+    //     }
+    // });
+}
+{// Lesson 63 - Keyboard Events
+    const form = document.querySelector('.signup-form');
+    const pattern = /^[a-zA-Z]{6,12}$/;
+
+    form.username.addEventListener('keyup', e => {
+        console.log(e);
+        if (pattern.test(form.username.value)) {
+            form.username.setAttribute('class', 'success');
+        } else {
+            form.username.setAttribute('class', 'error');
         }
     });
-
-
-
 }
+
+
