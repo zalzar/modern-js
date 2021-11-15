@@ -296,15 +296,18 @@ console.log('-------------------Chapter 7 - Forms & Form Events-----------------
 {// Lesson 62 - Basic Form Validation
     const form = document.querySelector('.signup-form');
     const feedback = document.querySelector('.feedback');
-
     form.addEventListener('submit', e => {
         e.preventDefault();
+        const pattern = /^[a-zA-Z]{6,12}$/;
         const username = form.username.value;
-        const UsernamePattern = /[a-zA-Z]{6,12}/;
-        if (UsernamePattern.test(username)) {
-            feedback.textContent = `${username} passed the regex test`;
-        } else {
-            feedback.textContent = `${username} result failed the regex test`;
+
+        if(pattern.test(username)){
+            feedback.textContent="Username is valid";
+        }else{
+            feedback.textContent="Username should be 6 to 12 char long";
         }
     });
+
+
+
 }
