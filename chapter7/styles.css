@@ -74,6 +74,22 @@ button {
 
 /*Lesson 59*/
 
+/* body{
+    background: #eee;
+  }
+  form{
+    max-width: 300px;
+    margin: 40px auto;
+    background: white;
+    padding: 10px;
+  }
+  input{
+    display: block;
+    margin: 10px auto;
+    padding: 4px;
+  } */
+
+/*Lesson 62*/
 body{
     background: #eee;
   }
@@ -87,4 +103,7 @@ body{
     display: block;
     margin: 10px auto;
     padding: 4px;
+  }
+  .feedback{
+      color: crimson;
   }
