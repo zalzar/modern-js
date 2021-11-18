@@ -42,26 +42,53 @@ console.log('-------------------Chapter 8 - Array Methods-------------------');
     //     console.log(premiumUsers);
 }
 
-// console.log('-------------------72. Map Method-------------------');
-{
-    // const prices = [20, 10, 30, 25, 15, 40, 80, 5];
-    // const salePrices = prices.map(price => price / 2);
-    // console.log(prices);
-    // console.log(salePrices);
+// // console.log('-------------------72. Map Method-------------------');
+// {
+//     // const prices = [20, 10, 30, 25, 15, 40, 80, 5];
+//     // const salePrices = prices.map(price => price / 2);
+//     // console.log(prices);
+//     // console.log(salePrices);
 
-    const products = [
-        { name: 'gold star', price: 20 },
-        { name: 'mushroom', price: 40 },
-        { name: 'green shells', price: 30 },
-        { name: 'banana skin', price: 10 },
-        { name: 'red shells', price: 50 }
+//     const products = [
+//         { name: 'gold star', price: 20 },
+//         { name: 'mushroom', price: 40 },
+//         { name: 'green shells', price: 30 },
+//         { name: 'banana skin', price: 10 },
+//         { name: 'red shells', price: 50 }
+//     ];
+//     const saleProducts = products.map(product => {
+//         if (product.price > 30) {
+//             return { name: product.name, price: product.price / 2 };
+//         } else {
+//             return product;
+//         }
+//     });
+//     console.log(saleProducts, products)
+// }
+
+// console.log('-------------------73. Reduce Method-------------------');
+{
+    // const scores = [10, 20, 60, 40, 70, 90, 30];
+    // const result = scores.reduce((accumulator, current) => {
+    //     if (current > 50) {
+    //         accumulator++;
+    //     }
+    //     return accumulator;
+    // }, 0);
+
+    // console.log(result);
+
+    const scores = [
+        { player: 'mario', score: 50 },
+        { player: 'yoshi', score: 30 },
+        { player: 'mario', score: 70 },
+        { player: 'crystal', score: 60 }
     ];
-    const saleProducts = products.map(product => {
-        if (product.price > 30) {
-            return { name: product.name, price: product.price / 2 };
-        } else {
-            return product;
+    const marioTotal = scores.reduce((accumulator, current) => {
+        if (current.player==='mario') {
+            accumulator+=current.score;
         }
-    });
-    console.log(saleProducts, products)
+        return accumulator;
+    }, 0);
+    console.log(marioTotal);
 }
