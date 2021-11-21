@@ -23,23 +23,43 @@ console.log('-------------------Chapter 11 - Dates & Times-------------------');
 //     console.log(now.toLocaleString());
 // }
 
-// 83. Timestamps & Comparisons
+// // 83. Timestamps & Comparisons
+// {
+//     const before = new Date('February 1 2019 7:30:59');
+//     const now = new Date();
+
+//     //console.log(now.getTime(), before.getTime());
+
+//     const diff = now.getTime() - before.getTime();
+//     console.log(now.getTime() + diff);
+
+//     const mins = Math.round(diff / 1000 / 60);
+//     const hours = Math.round(mins / 60);
+//     const days = Math.round(hours / 24);
+//     console.log(mins, hours, days);
+//     console.log(`The blog was written ${days} days ago.`);
+
+//     // converting timestamps into date objects
+//     const timestamp = 1675938474990;
+//     console.log(new Date(timestamp));
+// }
+
+// 84. Building a Digital Clock
 {
-    const before = new Date('February 1 2019 7:30:59');
-    const now = new Date();
+    const clock = document.querySelector('.clock');
 
-    //console.log(now.getTime(), before.getTime());
+    const tick = () => {
+        const now = new Date();
+        const h = now.getHours();
+        const m = now.getMinutes();
+        const s = now.getSeconds();
+        html = `
+            <span>${h}</span> :           
+            <span>${m}</span> :            
+            <span>${s}</span>            
+        `;
+        clock.innerHTML = html;
 
-    const diff = now.getTime() - before.getTime();
-    console.log(now.getTime()+ diff);
-
-    const mins = Math.round(diff/1000/60);
-    const hours = Math.round(mins/60);
-    const days = Math.round(hours/24);
-    console.log(mins, hours, days);
-    console.log(`The blog was written ${days} days ago.`);
-
-    // converting timestamps into date objects
-    const timestamp = 1675938474990;
-    console.log(new Date(timestamp));
+    };
+    setInterval(tick, 1000);
 }
