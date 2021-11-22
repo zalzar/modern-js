@@ -44,22 +44,46 @@ console.log('-------------------Chapter 11 - Dates & Times-------------------');
 //     console.log(new Date(timestamp));
 // }
 
-// 84. Building a Digital Clock
+// // 84. Building a Digital Clock
+// {
+//     const clock = document.querySelector('.clock');
+
+//     const tick = () => {
+//         const now = new Date();
+//         const h = now.getHours();
+//         const m = now.getMinutes();
+//         const s = now.getSeconds();
+//         html = `
+//             <span>${h}</span> :           
+//             <span>${m}</span> :            
+//             <span>${s}</span>            
+//         `;
+//         clock.innerHTML = html;
+
+//     };
+//     setInterval(tick, 1000);
+// }
+
+// 85. Date-fns Library
 {
-    const clock = document.querySelector('.clock');
+    // https://date-fns.org/
+    // format 
+    const now = new Date();
+    //console.log(dateFns.isToday(now));
 
-    const tick = () => {
-        const now = new Date();
-        const h = now.getHours();
-        const m = now.getMinutes();
-        const s = now.getSeconds();
-        html = `
-            <span>${h}</span> :           
-            <span>${m}</span> :            
-            <span>${s}</span>            
-        `;
-        clock.innerHTML = html;
+    // formating options
+    // https://date-fns.org/v1.9.0/docs/format
+    console.log(dateFns.format(now, 'YYYY'));
+    console.log(dateFns.format(now, 'MMMM'));
+    console.log(dateFns.format(now, 'Do'));
+    console.log(dateFns.format(now, 'dddd'));
 
-    };
-    setInterval(tick, 1000);
+    // Monday, 22nd November 2021
+    console.log(dateFns.format(now, 'dddd, Do MMMM YYYY'));
+
+    //comparing dates
+    const before = new Date('February 1 2019 12:00:00');
+    console.log(dateFns.distanceInWords(now, before));
+    console.log(dateFns.distanceInWords(now, before,{addSuffix:true}));
+
 }
