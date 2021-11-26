@@ -1,0 +1,7 @@
+
+[
+    {"tblID":"1","Name":"Hydrogen","Symbol":"H","Weight":"1.008","EnergyLevels":"1","BoilingPoint":"-252.9","MeltingPoint":"-259.1"},
+    {"tblID":"1","Name":"Lithium","Symbol":"Li","Weight":"6.94","EnergyLevels":"2+1","BoilingPoint":"1342","MeltingPoint":"180.54"},
+    {"tblID":"1","Name":"Sodium","Symbol":"Na","Weight":"22.989","EnergyLevels":"2+8+1","BoilingPoint":"882.9","MeltingPoint":"97.72"},
+    {"tblID":"1","Name":"Potassium","Symbol":"K","Weight":"39.098","EnergyLevels":"2+8+8+1","BoilingPoint":"758.9","MeltingPoint":"63.38"}
+]
