@@ -146,7 +146,54 @@ console.log('-------------------Chapter 12 - Async JavaScript-------------------
 //     console.log(4);
 // }
 
-// 94. Promise Basics
+// // 94. Promise Basics
+// {
+//     const getTodos = (resource, callback) => {
+//         return new Promise((resolve, reject) => {
+//             const request = new XMLHttpRequest();
+
+//             request.addEventListener('readystatechange', () => {
+//                 if (request.readyState === 4 && request.status === 200) {
+//                     const data = JSON.parse(request.responseText);
+//                     resolve(data);
+//                 } else if (request.readyState === 4) {
+//                     // if the status is not 200
+//                     reject('We lost a file: ');
+//                 }
+//             });
+//             request.open('GET', resource);
+//             request.send();
+//         })
+
+//     };
+//     jsonFiles=['./perTab.json','./perTab2.json','./perTab3.json'];
+//     getTodos(jsonFiles[0]).then((data) => {
+//         console.log('Promise 1 resolved', data);
+//     }).catch(error => {
+//         console.log(error,jsonFiles[0]+' broke the promise.',);
+//     });
+
+//     //promise example
+//     const getSomething = () => {
+//         return new Promise((resolve, reject) => {
+//             //resolve('Some data');
+//             reject('Some data');
+//         });
+//     };
+//     // getSomething().then(data=>{ 
+//     //     console.log(data);
+//     // }),(error)=>{
+//     //     console.log(error);
+//     // };
+
+//     // getSomething().then(data => {
+//     //     console.log(data);
+//     // }).catch(error => {
+//     //     console.log(error);
+//     // });
+// }
+
+// 95. Chaining Promises
 {
     const getTodos = (resource, callback) => {
         return new Promise((resolve, reject) => {
@@ -166,33 +213,32 @@ console.log('-------------------Chapter 12 - Async JavaScript-------------------
         })
 
     };
-    jsonFiles=['./perTab.json','./perTab2.json','./perTab3.json'];
-    getTodos(jsonFiles[0]).then((data) => {
-        console.log('Promise 1 resolved', data);
-    }).catch(error => {
-        console.log(error,jsonFiles[0]+' broke the promise.',);
-    });
+    
+    
+    jsonFiles = ['./perTab.json', './perTab2.json', './perTab3.json'];
+    console.log(jsonFiles);
+    getTodos(jsonFiles[0])
+        .then((data) => {
+            console.log('Promise 1 resolved', data);
+            return getTodos(jsonFiles[1])
+        })
+        .then((data) => {
+            console.log('Promise 2 resolved', data);
+            return getTodos(jsonFiles[2]);
+        })
+        .then((data) => {
+            console.log('Promise 3 resolved', data);
+        })
+        .catch(error => {
+            console.log(error, ' broke the promise.',);
+        });
 
-
-
-    //promise example
+    //promise 
     const getSomething = () => {
         return new Promise((resolve, reject) => {
             //resolve('Some data');
             reject('Some data');
         });
     };
-    // getSomething().then(data=>{ 
-    //     console.log(data);
-    // }),(error)=>{
-    //     console.log(error);
-    // };
-
-    // getSomething().then(data => {
-    //     console.log(data);
-    // }).catch(error => {
-    //     console.log(error);
-    // });
-
-
 }
+
