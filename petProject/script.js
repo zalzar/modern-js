@@ -73,7 +73,6 @@ getTodos('./perTab.json', (error, data) => {
         `;
     });
     content.innerHTML = html;
-
 });
 document.addEventListener('DOMContentLoaded', () => {
     var elems = document.querySelectorAll('.modal');
