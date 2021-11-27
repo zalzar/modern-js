@@ -193,52 +193,66 @@ console.log('-------------------Chapter 12 - Async JavaScript-------------------
 //     // });
 // }
 
-// 95. Chaining Promises
+// // 95. Chaining Promises
+// {
+//     const getTodos = (resource, callback) => {
+//         return new Promise((resolve, reject) => {
+//             const request = new XMLHttpRequest();
+
+//             request.addEventListener('readystatechange', () => {
+//                 if (request.readyState === 4 && request.status === 200) {
+//                     const data = JSON.parse(request.responseText);
+//                     resolve(data);
+//                 } else if (request.readyState === 4) {
+//                     // if the status is not 200
+//                     reject('We lost a file: ');
+//                 }
+//             });
+//             request.open('GET', resource);
+//             request.send();
+//         })
+
+//     };
+    
+    
+//     jsonFiles = ['./perTab.json', './perTab2.json', './perTab3.json'];
+//     console.log(jsonFiles);
+//     getTodos(jsonFiles[0])
+//         .then((data) => {
+//             console.log('Promise 1 resolved', data);
+//             return getTodos(jsonFiles[1])
+//         })
+//         .then((data) => {
+//             console.log('Promise 2 resolved', data);
+//             return getTodos(jsonFiles[2]);
+//         })
+//         .then((data) => {
+//             console.log('Promise 3 resolved', data);
+//         })
+//         .catch(error => {
+//             console.log(error, ' broke the promise.',);
+//         });
+
+//     //promise 
+//     const getSomething = () => {
+//         return new Promise((resolve, reject) => {
+//             //resolve('Some data');
+//             reject('Some data');
+//         });
+//     };
+// }
+
+// 96. The Fetch API
 {
-    const getTodos = (resource, callback) => {
-        return new Promise((resolve, reject) => {
-            const request = new XMLHttpRequest();
-
-            request.addEventListener('readystatechange', () => {
-                if (request.readyState === 4 && request.status === 200) {
-                    const data = JSON.parse(request.responseText);
-                    resolve(data);
-                } else if (request.readyState === 4) {
-                    // if the status is not 200
-                    reject('We lost a file: ');
-                }
-            });
-            request.open('GET', resource);
-            request.send();
-        })
-
-    };
-    
-    
-    jsonFiles = ['./perTab.json', './perTab2.json', './perTab3.json'];
-    console.log(jsonFiles);
-    getTodos(jsonFiles[0])
-        .then((data) => {
-            console.log('Promise 1 resolved', data);
-            return getTodos(jsonFiles[1])
-        })
-        .then((data) => {
-            console.log('Promise 2 resolved', data);
-            return getTodos(jsonFiles[2]);
-        })
-        .then((data) => {
-            console.log('Promise 3 resolved', data);
-        })
-        .catch(error => {
-            console.log(error, ' broke the promise.',);
-        });
-
-    //promise 
-    const getSomething = () => {
-        return new Promise((resolve, reject) => {
-            //resolve('Some data');
-            reject('Some data');
-        });
-    };
+    fetch('./perTab.json')
+    .then((response)=> {
+        console.log(response,'resolved');
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+    })
+    .catch((error) => {
+        console.log(error, ' broke the promise')
+    })
 }
-

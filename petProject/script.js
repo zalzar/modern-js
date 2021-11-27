@@ -37,45 +37,84 @@
 
 
 const content = document.querySelector('.row');
-const getTodos = (resource, callback) => {
-    const request = new XMLHttpRequest();
+// const getTodos = (resource, callback) => {
+//     const request = new XMLHttpRequest();
 
-    request.addEventListener('readystatechange', () => {
-        if (request.readyState === 4 && request.status === 200) {
-            const data = JSON.parse(request.responseText);
-            callback(undefined, data);
-        } else if (request.readyState === 4) {
-            // if the status is not 200
-            callback('could not fetch data', undefined);
-        }
-    });
-    request.open('GET', resource);
-    request.send();
-};
-getTodos('./perTab.json', (error, data) => {
-    html = ``;
-    console.log(data);
-    data.forEach((element, index) => {
-        html += `
-        <!-- Modal Trigger -->
-        <a class="waves-effect waves-light btn modal-trigger" href="#modal${index + 2}">${element.Name}</a>
+//     request.addEventListener('readystatechange', () => {
+//         if (request.readyState === 4 && request.status === 200) {
+//             const data = JSON.parse(request.responseText);
+//             callback(undefined, data);
+//         } else if (request.readyState === 4) {
+//             // if the status is not 200
+//             callback('could not fetch data', undefined);
+//         }
+//     });
+//     request.open('GET', resource);
+//     request.send();
+// };
+// getTodos('./perTab.json', (error, data) => {
+//     html = ``;
+//     console.log(data);
+//     data.forEach((element, index) => {
+//         html += `
+//         <!-- Modal Trigger -->
+//         <a class="waves-effect waves-light btn modal-trigger" href="#modal${index + 2}">${element.Name}</a>
 
-        <!-- Modal Structure -->
-        <div id="modal${index + 2}" class="modal bottom-sheet">
-            <div class="modal-content">
-                <h4>h4</h4>
-                <p>A bunch of text</p>
+//         <!-- Modal Structure -->
+//         <div id="modal${index + 2}" class="modal bottom-sheet">
+//             <div class="modal-content">
+//                 <h4>h4</h4>
+//                 <p>A bunch of text</p>
+//             </div>
+//             <div class="modal-footer">
+//                 <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+//             </div>
+//         </div>
+//         `;
+//     });
+//     content.innerHTML = html;
+// });
+
+fetch('./perTab.json')
+    .then((response) => {
+        console.log(response, 'resolved');
+        return response.json();
+    })
+    .then(data => {
+        html = ``;
+        console.log(data);
+        data.forEach((element, index) => {
+            html += `
+            <!-- Modal Trigger -->
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal${index + 2}">${element.Name}</a>
+    
+            <!-- Modal Structure -->
+            <div id="modal${index + 2}" class="modal bottom-sheet">
+                <div class="modal-content">
+                    <h4>h4</h4>
+                    <p>A bunch of text</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                </div>
             </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-            </div>
-        </div>
-        `;
-    });
-    content.innerHTML = html;
-});
-document.addEventListener('DOMContentLoaded', () => {
-    var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems);
-});
+            `;
+        });
+        content.innerHTML = html;
+    })
+    .then(document.addEventListener('DOMContentLoaded', () => {
+        var elems = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(elems);
+    })
+    )
+    .catch((error) => {
+        console.log(error, ' broke the promise')
+    })
+
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     var elems = document.querySelectorAll('.modal');
+//     var instances = M.Modal.init(elems);
+// });
 
