@@ -36,7 +36,7 @@
 // div.innerHTML = html;
 
 
-const content = document.querySelector('.row');
+// const content = document.querySelector('.row');
 // const getTodos = (resource, callback) => {
 //     const request = new XMLHttpRequest();
 
@@ -75,12 +75,12 @@ const content = document.querySelector('.row');
 //     content.innerHTML = html;
 // });
 
+const content = document.querySelector('.row');
 fetch('./perTab.json')
     .then((response) => {
         console.log(response, 'resolved');
         return response.json();
-    })
-    .then(data => {
+    }).then(data => {
         html = ``;
         console.log(data);
         data.forEach((element, index) => {
@@ -101,17 +101,16 @@ fetch('./perTab.json')
             `;
         });
         content.innerHTML = html;
-    })
-    .then(document.addEventListener('DOMContentLoaded', () => {
-        var elems = document.querySelectorAll('.modal');
-        var instances = M.Modal.init(elems);
-    })
-    )
-    .catch((error) => {
+        initializeModal();
+    }).catch((error) => {
         console.log(error, ' broke the promise')
     })
 
-
+document.addEventListener('DOMContentLoaded', initializeModal);
+function initializeModal() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems);
+}
 
 // document.addEventListener('DOMContentLoaded', () => {
 //     var elems = document.querySelectorAll('.modal');

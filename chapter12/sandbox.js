@@ -213,8 +213,8 @@ console.log('-------------------Chapter 12 - Async JavaScript-------------------
 //         })
 
 //     };
-    
-    
+
+
 //     jsonFiles = ['./perTab.json', './perTab2.json', './perTab3.json'];
 //     console.log(jsonFiles);
 //     getTodos(jsonFiles[0])
@@ -245,14 +245,13 @@ console.log('-------------------Chapter 12 - Async JavaScript-------------------
 // 96. The Fetch API
 {
     fetch('./perTab.json')
-    .then((response)=> {
-        console.log(response,'resolved');
-        return response.json();
-    })
-    .then(data => {
-        console.log(data);
-    })
-    .catch((error) => {
-        console.log(error, ' broke the promise')
-    })
+        .then((response) => {
+            console.log(response, 'resolved');
+            return response.json();
+        }).then(data => {
+            console.log(data);
+        }).catch((error) => {
+            console.log(error, ' broke the promise')
+        })
 }
+
