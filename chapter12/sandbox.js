@@ -242,16 +242,28 @@ console.log('-------------------Chapter 12 - Async JavaScript-------------------
 //     };
 // }
 
-// 96. The Fetch API
-{
-    fetch('./perTab.json')
-        .then((response) => {
-            console.log(response, 'resolved');
-            return response.json();
-        }).then(data => {
-            console.log(data);
-        }).catch((error) => {
-            console.log(error, ' broke the promise')
-        })
-}
+// // 96. The Fetch API
+// {
+//     fetch('./perTab.json')
+//         .then((response) => {
+//             console.log(response, 'resolved');
+//             return response.json();
+//         }).then(data => {
+//             console.log(data);
+//         }).catch((error) => {
+//             console.log(error, ' broke the promise')
+//         })
+// }
 
+// 97. Async & Await
+{
+    const getTodos = async () => {
+        const response = await fetch('./perTab.json');
+        // console.log(response);
+        const data = await response.json();
+        // console.log(data);
+        return data;
+    };
+    getTodos()
+        .then(data => console.log('resolved', data));
+}
