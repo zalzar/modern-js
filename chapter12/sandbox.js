@@ -255,15 +255,29 @@ console.log('-------------------Chapter 12 - Async JavaScript-------------------
 //         })
 // }
 
-// 97. Async & Await
+// // 97. Async & Await
+// {
+//     const getTodos = async () => {
+//         const response = await fetch('./perTab.json');
+//         // console.log(response);
+//         const data = await response.json();
+//         // console.log(data);
+//         return data;
+//     };
+//     getTodos()
+//         .then(data => console.log('resolved', data));
+// }
+
+// 98. Throwing & Catching Errors
 {
-    const getTodos = async () => {
-        const response = await fetch('./perTab.json');
-        // console.log(response);
+    const getTodos = async (jsonFile) => {
+        const response = await fetch(jsonFile);
+        if (response.status !== 200)
+            throw new Error(`could not fetch the ${jsonFile} file.`);
         const data = await response.json();
-        // console.log(data);
         return data;
     };
-    getTodos()
-        .then(data => console.log('resolved', data));
+    getTodos('./perTab.json')
+        .then(data => console.log('resolved', data))
+        .catch(error => console.log('rejected', error));
 }

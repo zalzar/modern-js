@@ -91,8 +91,8 @@ fetch('./perTab.json')
             <!-- Modal Structure -->
             <div id="modal${index + 2}" class="modal bottom-sheet">
                 <div class="modal-content">
-                    <h4>h4</h4>
-                    <p>A bunch of text</p>
+                    <h4>${element.Name}</h4>
+                    <p>Energy Levels: ${element.EnergyLevels}</p>
                 </div>
                 <div class="modal-footer">
                     <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
