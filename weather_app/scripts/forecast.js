@@ -22,11 +22,12 @@ const getCity = async (city) => {
     return (data[0]);
 };
 
-
-getCity('London').then(data => {
-    return getWeather(data.Key)
-}).then(data => {
-    console.log(data);
-}).catch(err => console.log(err));
-
+// testing getWeather
 // getWeather("328328");
+
+// testing the whole API
+// getCity('London').then(data => {
+//     return getWeather(data.Key)
+// }).then(data => {
+//     console.log(data);
+// }).catch(err => console.log(err));
