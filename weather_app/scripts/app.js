@@ -3,10 +3,19 @@ const cityForm = document.querySelector('form');
 const updateCity = async (city) => {
     const cityDets = await getCity(city);
     const weather = await getWeather(cityDets.Key);
+
     return {
-        cityDets: cityDets,
-        weather: weather
+        cityDets,
+        weather
     };
+
+    // bellow isthe original code and above is the object short hand 
+    // we can above code when the property name and the value is the same 
+
+    // return {
+    //     cityDets: cityDets,
+    //     weather: weather
+    // };
 };
 
 
