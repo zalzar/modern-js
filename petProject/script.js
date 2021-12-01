@@ -94,9 +94,9 @@ fetch('./perTab.json')
                     <h4>${element.Name}</h4>
                     <p>Energy Levels: ${element.EnergyLevels}</p>
                 </div>
-                <div class="modal-footer">
+                <!--<div class="modal-footer">
                     <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-                </div>
+                </div>-->
             </div>
             `;
         });
