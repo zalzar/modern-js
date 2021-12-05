@@ -9,10 +9,7 @@ fetch('./tbl_Periodic.json')
         data.forEach((element, index) => {
             html += `
             <!-- Modal Trigger -->
-            <a class="waves-effect waves-light btn modal-trigger" 
-            href="#modal${index + 2}"  
-            style="background-color:#${element.cpkHex};" >${element.symbol} </a>
-    
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal${index + 2}" style="background-color:#${element.cpkHex};" >${element.symbol} </a>
             <!-- Modal Structure -->
             <div id="modal${index + 2}" class="modal bottom-sheet">
                 <div class="modal-content">
