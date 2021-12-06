@@ -45,12 +45,42 @@ console.log('-------------------Section 15: Object Oriented JavaScript----------
 //      */
 // }
 
-// 118. Class Constructors
+// // 118. Class Constructors
+// {
+//     class User {
+//         constructor(tbxUsername, tbxEmail) {
+//             this.username = tbxUsername;
+//             this.email = tbxEmail;
+//         }
+//     }
+
+//     const userOne = new User('ali', 'ali@gmail.com');
+//     const userTwo = new User('sherly', 'sherly@gmail.com');
+
+//     console.log(userOne, userTwo);
+// }
+
+// 119. Class Methods & Method Chaining
 {
     class User {
         constructor(tbxUsername, tbxEmail) {
             this.username = tbxUsername;
             this.email = tbxEmail;
+            this.score = 0;
+        }
+        login() {
+            console.log(`${this.username} just logged in`);
+            return this;
+        }
+        logout() {
+            console.log(`${this.username} just logged out`);
+            return this;
+        }
+
+        incScore() {
+            this.score++;
+            console.log(`${this.username} has a score of ${this.score}`);
+            return this;
         }
     }
 
@@ -58,4 +88,8 @@ console.log('-------------------Section 15: Object Oriented JavaScript----------
     const userTwo = new User('sherly', 'sherly@gmail.com');
 
     console.log(userOne, userTwo);
+    userOne.login().incScore().incScore().logout();
+
+    userTwo.login();
+    userTwo.logout();
 }
