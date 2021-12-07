@@ -60,8 +60,43 @@ console.log('-------------------Section 15: Object Oriented JavaScript----------
 //     console.log(userOne, userTwo);
 // }
 
-// 119. Class Methods & Method Chaining
+// // 119. Class Methods & Method Chaining
+// {
+//     class User {
+//         constructor(tbxUsername, tbxEmail) {
+//             this.username = tbxUsername;
+//             this.email = tbxEmail;
+//             this.score = 0;
+//         }
+//         login() {
+//             console.log(`${this.username} just logged in`);
+//             return this;
+//         }
+//         logout() {
+//             console.log(`${this.username} just logged out`);
+//             return this;
+//         }
+
+//         incScore() {
+//             this.score++;
+//             console.log(`${this.username} has a score of ${this.score}`);
+//             return this;
+//         }
+//     }
+
+//     const userOne = new User('ali', 'ali@gmail.com');
+//     const userTwo = new User('sherly', 'sherly@gmail.com');
+
+//     console.log(userOne, userTwo);
+//     userOne.login().incScore().incScore().logout();
+
+//     userTwo.login();
+//     userTwo.logout();
+// }
+
+// 120. Class Inheritance (subclasses)
 {
+
     class User {
         constructor(tbxUsername, tbxEmail) {
             this.username = tbxUsername;
@@ -84,12 +119,28 @@ console.log('-------------------Section 15: Object Oriented JavaScript----------
         }
     }
 
+    class Admin extends User {
+        deleteUser(user) {
+            users = users.filter(u => u.username !== user.username)
+        }
+    }
+
+
     const userOne = new User('ali', 'ali@gmail.com');
     const userTwo = new User('sherly', 'sherly@gmail.com');
+    const userTree = new Admin('Shaun', 'Shaun@gmail.com');
 
-    console.log(userOne, userTwo);
-    userOne.login().incScore().incScore().logout();
 
-    userTwo.login();
-    userTwo.logout();
+    console.log(userOne, userTwo, userTree);
+    let users = [userOne, userTwo, userTree];
+    console.log(users);
+
+    userTree.deleteUser(userTwo);
+    console.log(users);
+
+    userOne.deleteUser(userTree);
+    // userOne.login().incScore().incScore().logout();
+
+    // userTwo.login();
+    // userTwo.logout();
 }
