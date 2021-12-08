@@ -94,53 +94,119 @@ console.log('-------------------Section 15: Object Oriented JavaScript----------
 //     userTwo.logout();
 // }
 
-// 120. Class Inheritance (subclasses)
+// // 120. Class Inheritance (subclasses)
+// {
+//     class User {
+//         constructor(tbxUsername, tbxEmail) {
+//             this.username = tbxUsername;
+//             this.email = tbxEmail;
+//             this.score = 0;
+//         }
+//         login() {
+//             console.log(`${this.username} just logged in`);
+//             return this;
+//         }
+//         logout() {
+//             console.log(`${this.username} just logged out`);
+//             return this;
+//         }
+
+//         incScore() {
+//             this.score++;
+//             console.log(`${this.username} has a score of ${this.score}`);
+//             return this;
+//         }
+//     }
+
+//     class Admin extends User {
+//         deleteUser(user) {
+//             users = users.filter(u => u.username !== user.username)
+//         }
+//     }
+
+
+//     const userOne = new User('ali', 'ali@gmail.com');
+//     const userTwo = new User('sherly', 'sherly@gmail.com');
+//     const userTree = new Admin('Shaun', 'Shaun@gmail.com');
+
+
+//     console.log(userOne, userTwo, userTree);
+//     let users = [userOne, userTwo, userTree];
+//     console.log(users);
+
+//     userTree.deleteUser(userTwo);
+//     console.log(users);
+
+//     userOne.deleteUser(userTree);
+//     // userOne.login().incScore().incScore().logout();
+
+//     // userTwo.login();
+//     // userTwo.logout();
+// }
+
+// // 121. Super( )
+// {
+//     class User {
+//         constructor(tbxUsername, tbxEmail) {
+//             this.username = tbxUsername;
+//             this.email = tbxEmail;
+//             this.score = 0;
+//         }
+//         login() {
+//             console.log(`${this.username} just logged in`);
+//             return this;
+//         }
+//         logout() {
+//             console.log(`${this.username} just logged out`);
+//             return this;
+//         }
+
+//         incScore() {
+//             this.score++;
+//             console.log(`${this.username} has a score of ${this.score}`);
+//             return this;
+//         }
+//     }
+
+//     class Admin extends User {
+//         constructor(username,email,title){
+//             super(username,email);
+//             this.title = title;
+//         }
+//         deleteUser(user) {
+//             users = users.filter(u => u.username !== user.username)
+//         }
+//     }
+
+//     const userOne = new User('ali', 'ali@gmail.com');
+//     const userTwo = new User('sherly', 'sherly@gmail.com');
+//     const userTree = new Admin('Shaun', 'Shaun@gmail.com','black-belt-ninja');
+
+//     console.log(userOne, userTwo, userTree);
+//     let users = [userOne, userTwo, userTree];
+//     console.log(users);
+// }
+
+// 122. Constructors (under the hood)
 {
-
-    class User {
-        constructor(tbxUsername, tbxEmail) {
-            this.username = tbxUsername;
-            this.email = tbxEmail;
-            this.score = 0;
-        }
-        login() {
-            console.log(`${this.username} just logged in`);
-            return this;
-        }
-        logout() {
-            console.log(`${this.username} just logged out`);
-            return this;
-        }
-
-        incScore() {
-            this.score++;
-            console.log(`${this.username} has a score of ${this.score}`);
-            return this;
+    function User(tbxUsername, tbxEmail) {
+        this.username= tbxUsername;
+        this.email= tbxEmail;
+        this.login = function() {
+            console.log(`${this.username} has logged in`);
         }
     }
-
-    class Admin extends User {
-        deleteUser(user) {
-            users = users.filter(u => u.username !== user.username)
-        }
-    }
-
+    // class User {
+    //     constructor(tbxUsername, tbxEmail) {
+    //         this.username = tbxUsername;
+    //         this.email = tbxEmail;
+    //     }
+    // }
 
     const userOne = new User('ali', 'ali@gmail.com');
     const userTwo = new User('sherly', 'sherly@gmail.com');
-    const userTree = new Admin('Shaun', 'Shaun@gmail.com');
 
-
-    console.log(userOne, userTwo, userTree);
-    let users = [userOne, userTwo, userTree];
-    console.log(users);
-
-    userTree.deleteUser(userTwo);
-    console.log(users);
-
-    userOne.deleteUser(userTree);
-    // userOne.login().incScore().incScore().logout();
-
-    // userTwo.login();
-    // userTwo.logout();
+    console.log(userOne, userTwo);
+    userOne.login();
 }
+
