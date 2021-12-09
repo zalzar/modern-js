@@ -187,26 +187,47 @@ console.log('-------------------Section 15: Object Oriented JavaScript----------
 //     console.log(users);
 // }
 
-// 122. Constructors (under the hood)
+// // 122. Constructors (under the hood)
+// {
+//     function User(tbxUsername, tbxEmail) {
+//         this.username= tbxUsername;
+//         this.email= tbxEmail;
+//         this.login = function() {
+//             console.log(`${this.username} has logged in`);
+//         }
+//     }
+//     // class User {
+//     //     constructor(tbxUsername, tbxEmail) {
+//     //         this.username = tbxUsername;
+//     //         this.email = tbxEmail;
+//     //     }
+//     // }
+
+//     const userOne = new User('ali', 'ali@gmail.com');
+//     const userTwo = new User('sherly', 'sherly@gmail.com');
+
+//     console.log(userOne, userTwo);
+//     userOne.login();
+// }
+
+// 123. Prototype Model
 {
     function User(tbxUsername, tbxEmail) {
         this.username= tbxUsername;
         this.email= tbxEmail;
-        this.login = function() {
-            console.log(`${this.username} has logged in`);
-        }
     }
-    // class User {
-    //     constructor(tbxUsername, tbxEmail) {
-    //         this.username = tbxUsername;
-    //         this.email = tbxEmail;
-    //     }
-    // }
 
+    User.prototype.login = function() {
+        console.log(`${this.username} has logged in`);
+        // return this; // for chaining, uncomment this line
+    };
+    User.prototype.logout = function() {
+        console.log(`${this.username} has logged out`);
+        // return this; // for chaining, uncomment this line
+    };
     const userOne = new User('ali', 'ali@gmail.com');
     const userTwo = new User('sherly', 'sherly@gmail.com');
 
     console.log(userOne, userTwo);
     userOne.login();
 }
-
