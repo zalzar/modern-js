@@ -210,24 +210,57 @@ console.log('-------------------Section 15: Object Oriented JavaScript----------
 //     userOne.login();
 // }
 
-// 123. Prototype Model
+// // 123. Prototype Model
+// {
+//     function User(tbxUsername, tbxEmail) {
+//         this.username= tbxUsername;
+//         this.email= tbxEmail;
+//     }
+
+//     User.prototype.login = function() {
+//         console.log(`${this.username} has logged in`);
+//         // return this; // for chaining, uncomment this line
+//     };
+//     User.prototype.logout = function() {
+//         console.log(`${this.username} has logged out`);
+//         // return this; // for chaining, uncomment this line
+//     };
+//     const userOne = new User('ali', 'ali@gmail.com');
+//     const userTwo = new User('sherly', 'sherly@gmail.com');
+
+//     console.log(userOne, userTwo);
+//     userOne.login();
+// }
+
+// 124. Prototypal Inheritance
 {
     function User(tbxUsername, tbxEmail) {
-        this.username= tbxUsername;
-        this.email= tbxEmail;
+        this.username = tbxUsername;
+        this.email = tbxEmail;
     }
 
-    User.prototype.login = function() {
+    User.prototype.login = function () {
         console.log(`${this.username} has logged in`);
         // return this; // for chaining, uncomment this line
     };
-    User.prototype.logout = function() {
+    User.prototype.logout = function () {
         console.log(`${this.username} has logged out`);
         // return this; // for chaining, uncomment this line
     };
+
+    function Admin(username, email, title) {
+        User.call(this, username, email);
+        this.title = title;
+    };
+
+    Admin.prototype = Object.create(User.prototype);
+    Admin.prototype.deleteUser = function () {
+        // delete a user
+    };
     const userOne = new User('ali', 'ali@gmail.com');
     const userTwo = new User('sherly', 'sherly@gmail.com');
+    const userTree = new Admin('shaun', 'shaun@gmail.com', 'Black Belt');
 
-    console.log(userOne, userTwo);
+    console.log(userOne, userTwo, userTree);
     userOne.login();
 }
