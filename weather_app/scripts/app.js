@@ -3,7 +3,7 @@ const card = document.querySelector('.card');
 const details = document.querySelector('.details');
 const time = document.querySelector('img.time');
 const icon = document.querySelector('.icon img');
-
+const forcast= new Forcast();
 
 const updateUI = (data) => {
     // const cityDets = data.cityDets;
@@ -37,23 +37,23 @@ const updateUI = (data) => {
 
 };
 
-const updateCity = async (city) => {
-    const cityDets = await getCity(city);
-    const weather = await getWeather(cityDets.Key);
+// const updateCity = async (city) => {
+//     const cityDets = await getCity(city);
+//     const weather = await getWeather(cityDets.Key);
 
-    return {
-        cityDets,
-        weather
-    };
+//     return {
+//         cityDets,
+//         weather
+//     };
 
-    // bellow isthe original code and above is the object short hand 
-    // we can above code when the property name and the value is the same 
+//     // bellow isthe original code and above is the object short hand 
+//     // we can above code when the property name and the value is the same 
 
-    // return {
-    //     cityDets: cityDets,
-    //     weather: weather
-    // };
-};
+//     // return {
+//     //     cityDets: cityDets,
+//     //     weather: weather
+//     // };
+// };
 
 
 cityForm.addEventListener('submit', e => {
@@ -63,7 +63,7 @@ cityForm.addEventListener('submit', e => {
     const city = cityForm.city.value.trim();
     cityForm.reset();
 
-    updateCity(city)
+    forcast.updateCity(city)
         .then(data => updateUI(data))
         .catch(err => console.log(err));
 
@@ -73,7 +73,7 @@ cityForm.addEventListener('submit', e => {
 });
 
 if(localStorage.getItem('city')){
-    updateCity(localStorage.getItem('city'))
+    forcast.updateCity(localStorage.getItem('city'))
         .then(data=>updateUI(data))
         .catch(err => console.log(err));
 }
