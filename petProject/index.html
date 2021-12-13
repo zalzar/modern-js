@@ -7,11 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css">
     <style>
-        .modal{
+        .modal {
             height: 600px !important;
         }
-        .modal-content{
+
+        .modal-content {
             height: 100%;
         }
     </style>
@@ -21,26 +23,43 @@
 <body>
     <div class="container">
         <div class="row">
-
+            <!-- here the table is getting injected -->
         </div>
-        <!-- Modal Trigger -->
-        <a class="waves-effect waves-light btn modal-trigger" 
-           style="background-color:#cc80ff;" 
-           href="#modal1" >Modal</a>
 
-        <!-- Modal Structure -->
-        <div id="modal1" class="modal bottom-sheet">
-            <div class="modal-content">
-                <h4>Modal Header</h4>
-                <p class="">A bunch of text</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col s3 tblp1">
+
             </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            <div class="col s6 tblp2">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+            <div class="col s3 tblp3">
+                <!-- Modal Trigger -->
+                <a class="waves-effect waves-light btn modal-trigger" style="background-color:#cc80ff;"
+                    href="#modal1">Modal</a>
+
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal bottom-sheet">
+                    <div class="modal-content">
+                        <h4>Modal Header</h4>
+                        <p>A bunch of text</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    
-    
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./script.js"></script>
     <a href="" target="_blank"></a>
