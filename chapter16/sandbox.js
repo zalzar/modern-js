@@ -24,17 +24,62 @@
 //     });
 // }
 
-// 131. Saving Documents
+// // 131. Saving Documents
+// {
+//     const list = document.querySelector('ul');
+//     const form = document.querySelector('form');
+
+//     const addRecipe = (recipe) => {
+//         let time = (recipe.created_at.toDate());
+//         let html = `
+//         <li>
+//             <div>${recipe.title}</div>
+//             <div>${time}</div>
+//             <button class="btn btn-danger btn-sm my-2"></button>
+//         </li>
+//         `;
+//         list.innerHTML += html;
+//     }
+//     db.collection('recipes').get().then((snapshot) => {
+//         // when we have the data
+//         // console.log(snapshot.docs[0].data());
+//         snapshot.docs.forEach(doc => {
+
+//             addRecipe(doc.data());
+//         })
+//     }).catch(err => {
+//         console.error(err);
+//     });
+
+//     // add document
+//     form.addEventListener('submit', e => {
+//         e.preventDefault();
+//         const now = new Date();
+
+//         const recipe = {
+//             title: form.recipe.value,
+//             created_at: firebase.firestore.Timestamp.fromDate(now),
+//         };
+//         db.collection('recipes').add(recipe).then(() => {
+//             console.log('recipe is added');
+//         }).catch(err => {
+//             console.error(err);
+//         });
+//     });
+// }
+
+// 132. Deleting Documents
 {
     const list = document.querySelector('ul');
     const form = document.querySelector('form');
 
-    const addRecipe = (recipe) => {
-        let time=(recipe.created_at.toDate());
+    const addRecipe = (recipe,id) => {
+        let time = recipe.created_at.toDate();
         let html = `
-        <li>
+        <li data-id="${id}">
             <div>${recipe.title}</div>
             <div>${time}</div>
+            <button class="btn btn-danger btn-sm my-2">Delete</button>
         </li>
         `;
         list.innerHTML += html;
@@ -43,27 +88,35 @@
         // when we have the data
         // console.log(snapshot.docs[0].data());
         snapshot.docs.forEach(doc => {
-
-            addRecipe(doc.data());
+            addRecipe(doc.data(),doc.id);
         })
     }).catch(err => {
         console.error(err);
     });
 
-    // add document
+    // adding document
     form.addEventListener('submit', e => {
         e.preventDefault();
         const now = new Date();
 
         const recipe = {
-            title: form.recipe.value, 
+            title: form.recipe.value,
             created_at: firebase.firestore.Timestamp.fromDate(now),
         };
-        db.collection('recipes').add(recipe).then(()=>{
+        db.collection('recipes').add(recipe).then(() => {
             console.log('recipe is added');
         }).catch(err => {
             console.error(err);
         });
     });
 
+    // Deleting document
+    list.addEventListener('click',e=>{
+        if(e.target.tagName==='BUTTON'){
+            const id = e.target.parentElement.getAttribute('data-id');
+            db.collection('recipes').doc(id).delete().then(()=>{
+                console.log('recipes is deleted');
+            });
+        }
+    });
 }
