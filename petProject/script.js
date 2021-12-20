@@ -18,7 +18,8 @@ fetch('./tbl_Periodic.json')
                     <p>Energy Levels: ${element.EnergyLevels}</p>
                     <a href="${element.source} target="popup"><i class="material-icons">info</i></a>
                     
-                    <p>Energy Levels: ${element.source}</p>
+                    <p>Energy Levels: </p>
+                    <p>For more details, here is Wikipedia link of <a href="${element.source}">${element.name}</a></p>
                 </div>
                 <!--<div class="modal-footer">
                     <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
