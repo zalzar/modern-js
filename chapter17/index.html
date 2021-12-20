@@ -43,7 +43,7 @@
                 </div>
             </div>
         </form>
-         
+
         <!-- update name form  -->
         <form class="new-name my-3">
             <div class="input-group">
@@ -58,6 +58,30 @@
             <div class="update-mssg"></div>
         </form>
     </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+    <script>
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const config = {
+            apiKey: "AIzaSyDNdQMAj3_AH9vDm2KTrvbeErih4BxWmkY",
+            authDomain: "udemy-mordern-javascript-3972e.firebaseapp.com",
+            projectId: "udemy-mordern-javascript-3972e",
+            storageBucket: "udemy-mordern-javascript-3972e.appspot.com",
+            messagingSenderId: "488564107139",
+            appId: "1:488564107139:web:c924b79b5a2a93731f78b6",
+            measurementId: "G-M1XZ9S0DNJ"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(config);
+        // const app = initializeApp(firebaseConfig);
+        // const analytics = getAnalytics(app);
+        const db = firebase.firestore();
+    </script>
+
     <script src="./scripts/chat.js"></script>
     <script src="./scripts/ui.js"></script>
     <script src="./scripts/app.js"></script>
