@@ -27,3 +27,8 @@ li {
     border-top: 1px solid #e2e2e2 !important;
     border-radius: 3px;
 }
+
+.update-mssg {
+    text-align: center;
+    margin: 20px auto;
+}
