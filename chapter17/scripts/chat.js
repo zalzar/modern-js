@@ -48,17 +48,4 @@ class Chatroom {
     }
 }
 
-const chatroom = new Chatroom('general', 'Shuan');
 
-chatroom.getChats((data) => {
-    console.log(data);
-});
-
-setTimeout(() => {
-    chatroom.updateRoom('gaming');
-    chatroom.updateName('Ali');
-    chatroom.getChats((data) => {
-        console.log(data);
-    });
-    chatroom.addChat('hello');
-}, 3000)
