@@ -3,11 +3,11 @@
 // updating the username
 // updating the room
 
-class Chatroom{
-    constructor(room,username) {
+class Chatroom {
+    constructor(room, username) {
         this.room = room;
         this.username = username;
-        this.chats=db.collection('chats');
+        this.chats = db.collection('chats');
     }
     async addChat(message) {
         // format a chat objects
@@ -22,9 +22,24 @@ class Chatroom{
         const response = await this.chats.add(chat);
         return response;
     }
+    getChats(callback) {
+        this.chats
+            .onSnapshot(snapshot => {
+                snapshot.docChanges().forEach(docChange => {
+                    if (docChange.type === 'added') {
+                        //update the UI
+                        callback(docChange.doc.data());
+                    }
+                })
+            });
+    }
 }
 
-const chatroom = new Chatroom('gaming','Shuan');
-chatroom.addChat('hello everyone')
-    .then(()=> console.log('chat added'))
-    .catch(err => console.log(err));
+const chatroom = new Chatroom('gaming', 'Shuan');
+
+chatroom.getChats((data) => {
+    console.log(data);
+});
+// chatroom.addChat('hello everyone')
+//     .then(() => console.log('chat added'))
+//     .catch(err => console.log(err));
