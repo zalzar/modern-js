@@ -8,6 +8,7 @@ class Chatroom {
         this.room = room;
         this.username = username;
         this.chats = db.collection('chats');
+        this.unsub;
     }
     async addChat(message) {
         // format a chat objects
@@ -23,8 +24,8 @@ class Chatroom {
         return response;
     }
     getChats(callback) {
-        this.chats
-            .where('room','==',this.room)
+        this.unsub = this.chats
+            .where('room', '==', this.room)
             .orderBy('created_at')
             .onSnapshot(snapshot => {
                 snapshot.docChanges().forEach(docChange => {
@@ -35,6 +36,16 @@ class Chatroom {
                 })
             });
     }
+    updateName(username) {
+        this.username = username;
+    }
+    updateRoom(room) {
+        this.room = room;
+        console.log('room updated');
+        if (this.unsub) {
+            this.unsub();
+        }
+    }
 }
 
 const chatroom = new Chatroom('general', 'Shuan');
@@ -42,6 +53,12 @@ const chatroom = new Chatroom('general', 'Shuan');
 chatroom.getChats((data) => {
     console.log(data);
 });
-// chatroom.addChat('hello everyone')
-//     .then(() => console.log('chat added'))
-//     .catch(err => console.log(err));
+
+setTimeout(() => {
+    chatroom.updateRoom('gaming');
+    chatroom.updateName('Ali');
+    chatroom.getChats((data) => {
+        console.log(data);
+    });
+    chatroom.addChat('hello');
+}, 3000)
