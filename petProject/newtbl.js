@@ -1,4 +1,4 @@
-const content = document.querySelector('tr');
+const content = document.querySelector('.row');
 fetch('./newtbl.json')
     .then((response) => {
         console.log(response, 'resolved');
@@ -7,10 +7,10 @@ fetch('./newtbl.json')
         html = ``;
         console.log(data);
         data.forEach((element, index) => {
-            html += `
-            <td colspan="${element.colspan}">
+            html += `               
                 <!-- Modal Trigger -->
                 <a class="waves-effect waves-light btn modal-trigger" href="#modal${index + 2}">${element.symbol} </a>
+    
                 <!-- Modal Structure -->
                 <div id="modal${index + 2}" class="modal bottom-sheet">
                     <div class="modal-content">
@@ -24,8 +24,8 @@ fetch('./newtbl.json')
                         </p>
                     </div>
                 </div>
-            </td>
-            ${element.break}
+
+            
             `;
         });
         content.innerHTML = html;
