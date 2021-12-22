@@ -1,12 +1,29 @@
-.container{
+.container {
     max-width: 600px;
-  }
-  .btn{
+}
+
+.btn {
     background: #43d9be;
     color: white;
     outline: none !important;
     box-shadow: none !important;
-  }
-  .btn:focus{
+}
+
+.btn:focus {
     outline: none !important;
-  }
+}
+
+.username {
+    font-weight: bold;
+}
+
+.time {
+    font-size: 0.7em;
+    color: #999;
+}
+
+li {
+    margin-top: 3px !important;
+    border-top: 1px solid #e2e2e2 !important;
+    border-radius: 3px;
+}
