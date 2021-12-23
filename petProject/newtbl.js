@@ -1,4 +1,5 @@
 const content = document.querySelector('.row');
+const elementss = document.querySelectorAll('#e');
 fetch('./newtbl.json')
     .then((response) => {
         console.log(response, 'resolved');
@@ -6,7 +7,9 @@ fetch('./newtbl.json')
     }).then(data => {
         html = ``;
         console.log(data);
+
         data.forEach((element, index) => {
+            console.log(elementss);
             html += `               
                 <!-- Modal Trigger -->
                 <a class="waves-effect waves-light btn modal-trigger" href="#modal${index + 2}">${element.symbol} </a>
@@ -36,6 +39,7 @@ fetch('./newtbl.json')
 //<a class="waves-effect waves-light btn modal-trigger" href="#modal${index + 2}" style="background-color:#${element.cpkHex};" >${element.symbol} </a>
 
 document.addEventListener('DOMContentLoaded', initializeModal);
+
 function initializeModal() {
     var elems = document.querySelectorAll('.modal');
     var instances = M.Modal.init(elems);
@@ -45,4 +49,3 @@ function initializeModal() {
 //     var elems = document.querySelectorAll('.modal');
 //     var instances = M.Modal.init(elems);
 // });
-
