@@ -21,42 +21,63 @@
 //     console.log(personClone);
 // }
 
-// 149. sets
-const namesArray = ['Ryu', 'Ali', 'Ryu', 'Shaun'];
-console.log(namesArray);
+// // 149. Sets
+// {
+//     const namesArray = ['Ryu', 'Ali', 'Ryu', 'Shaun'];
+//     console.log(namesArray);
 
-//const namesSet = new Set(['Ryu', 'Ali', 'Ryu', 'Shaun']);
-// const namesSet = new Set(namesArray);
-// console.log(namesSet);
+//     //const namesSet = new Set(['Ryu', 'Ali', 'Ryu', 'Shaun']);
+//     // const namesSet = new Set(namesArray);
+//     // console.log(namesSet);
 
-// const uniqueNames = [...namesSet];
-const uniqueNames = [...new Set(namesArray)];
-console.log(uniqueNames);
+//     // const uniqueNames = [...namesSet];
+//     const uniqueNames = [...new Set(namesArray)];
+//     console.log(uniqueNames);
 
-// example of Sets rejecting duplicates
-const ages = new Set();
-ages.add(20);
-ages.add(25).add(30);
-ages.add(25);
+//     // example of Sets rejecting duplicates
+//     const ages = new Set();
+//     ages.add(20);
+//     ages.add(25).add(30);
+//     ages.add(25);
 
-// and if we want to remove
-ages.delete(25);
-console.log(ages, ages.size);
+//     // and if we want to remove
+//     ages.delete(25);
+//     console.log(ages, ages.size);
 
-// to check if a member exist in a set
-console.log(ages.has(30), ages.has(25));
+//     // to check if a member exist in a set
+//     console.log(ages.has(30), ages.has(25));
 
-// to remove all values
-ages.clear();
-console.log(ages);
+//     // to remove all values
+//     ages.clear();
+//     console.log(ages);
 
-// Sets are iterable
-const ninjas = new Set([
-    { name: 'shaun', age: 30 },
-    { name: 'crystal', age: 29 },
-    { name: 'chun-li', age: 32 }
-]);
+//     // Sets are iterable
+//     const ninjas = new Set([
+//         { name: 'shaun', age: 30 },
+//         { name: 'crystal', age: 29 },
+//         { name: 'chun-li', age: 32 }
+//     ]);
 
-ninjas.forEach(ninja => {
-    console.log(ninja.name, ninja.age);
-});
+//     ninjas.forEach(ninja => {
+//         console.log(ninja.name, ninja.age);
+//     });
+// }
+
+// 150. Symbols
+const symbolOne = Symbol();
+const symbolTwo = Symbol();
+
+console.log(symbolOne, symbolTwo, typeof(symbolOne));
+console.log(symbolOne === symbolTwo);
+
+const ninja = {};
+
+ninja.age = 30;
+ninja['belt'] = 'orange';
+ninja['belt'] = 'black';
+
+ninja[symbolOne] = 'ryu';
+ninja[symbolTwo] = 'shaun';
+
+console.log(ninja);
+console.log(ninja[symbolOne], ninja[symbolTwo]);
