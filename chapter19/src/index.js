@@ -1,13 +1,5 @@
-const greet = (name) => {
-    console.log(`hello ${name}`);
-};
+import { styleBody, addTitle, contact } from './dom';
+import users, { getPremiumUsers } from './data';
 
-greet('Ali');
-greet('Morpheus');
-greet('Link');
-
-class User {
-    constructor() {
-        this.score = 0;
-    }
-}
+const premUsers = getPremiumUsers(users);
+console.log(users, premUsers);
