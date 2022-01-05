@@ -4,9 +4,10 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "babel": "C:/Users/aliza/Projects/modern-js/chapter19/node_modules/.bin/babel ./src/index.js -w -o ./dist/assets/bundle.js",
-        "webpack": "C:/Users/aliza/Projects/modern-js/chapter19/node_modules/.bin/webpack -w",
-        "serve": "webpack-dev-server"
+        "babel": "C:/Users/aliza/Projects/modern-js/chapter19/node_modules/.bin/babel ./chapter19/src/index.js -w -o ./chapter19/dist/assets/bundle.js",
+        "build": "C:/Users/aliza/Projects/modern-js/chapter19/node_modules/.bin/webpack --mode production",
+        "serve": "webpack-dev-server --mode development"
+
     },
     "author": "",
     "license": "ISC",
