@@ -13,5 +13,4 @@ const addTitle = (text) => {
 };
 
 const contact = "neo@matrix.world";
-
 export { styleBody, addTitle, contact };
