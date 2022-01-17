@@ -12,5 +12,5 @@ const addTitle = (text) => {
     body.appendChild(title);
 };
 
-styleBody();
-addTitle('Hello world from the dom file');
+const contact = 'ali@matrix.com';
+export { styleBody, addTitle, contact };
