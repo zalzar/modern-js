@@ -1,13 +1,21 @@
 import { styleBody, addTitle, contact } from './dom';
 import users, { getPremUsers } from './data';
 
+const greet = (param) => {
+    console.log(`hello ${param}`);
+};
+
+console.log('from index file');
+console.log(contact);
+
+greet('Ali');
+greet('Morpheus');
+greet('Link');
+
 styleBody();
-addTitle('Hello world from the dom file');
+addTitle('Hello world');
 
 console.log(users);
 
-const preUsers = getPremUsers(users);
-console.log(preUsers);
-
-console.log(contact);
-console.log('from index.js');
+const premUsers = getPremUsers(users);
+console.log(premUsers);
